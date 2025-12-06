@@ -5,10 +5,10 @@ function App() {
     <>
       <Player />
       <div id="challenges">
-        <Challenge title="Challenge 1" targetTime={5} />
-        <Challenge title="Challenge 2" targetTime={10} />
-        <Challenge title="Challenge 3" targetTime={15} /> 
-        <Challenge title="Challenge 4" targetTime={20} /> 
+        <Challenge title="Challenge 1" targetTime={1} />
+        <Challenge title="Challenge 2" targetTime={2} />
+        <Challenge title="Challenge 3" targetTime={3} /> 
+        <Challenge title="Challenge 4" targetTime={4} /> 
       </div>
     </>
   );
