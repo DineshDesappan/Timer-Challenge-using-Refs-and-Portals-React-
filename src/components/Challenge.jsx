@@ -2,31 +2,42 @@ import React, { useRef, useState } from "react";
 import Modal from "./Modal";
 
 const Challenge = ({ title, targetTime }) => {
-const [timeRemaining, setTimeRemaining] = useState(targetTime * 1000)
+
+  const [timeRemaining, setTimeRemaining] = useState(targetTime * 1000);
+
   const timerRef = useRef();
   const modalRef = useRef();
-let timerIsActive = timeRemaining > 0 && timeRemaining < targetTime * 1000;
-  if(timeRemaining <= 0) {
+
+  let timerIsActive = timeRemaining > 0 && timeRemaining < targetTime * 1000;
+
+  if (timeRemaining <= 0) {
     clearInterval(timerRef.current);
     modalRef.current.open();
   }
-function onReset() {
-  setTimeRemaining(targetTime * 1000);
-}
+
+  function onReset() {
+    setTimeRemaining(targetTime * 1000);
+  }
+
   function handleStartChallenge() {
     timerRef.current = setInterval(() => {
-      setTimeRemaining(prev => prev - 10);
+      setTimeRemaining((prev) => prev - 10);
     }, 10);
   }
 
   function handleStopChallenge() {
     clearInterval(timerRef.current);
     modalRef.current.open();
-
   }
+
   return (
     <>
-      <Modal targetTime={targetTime} ref={modalRef} remainingTime={timeRemaining} onReset={onReset}/>
+      <Modal
+        targetTime={targetTime}
+        ref={modalRef}
+        remainingTime={timeRemaining}
+        onReset={onReset}
+      />
 
       <section className="challenge">
         <h2>{title}</h2>

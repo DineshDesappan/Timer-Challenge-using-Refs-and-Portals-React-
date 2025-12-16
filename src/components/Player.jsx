@@ -1,8 +1,9 @@
 import { useRef, useState } from "react";
-import Modal from "./Modal";
 
 export default function Player() {
+
   const [playername, setPlayerName] = useState("");
+
   const nameRef = useRef();
 
   function submitHandler() {

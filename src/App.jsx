@@ -1,5 +1,6 @@
 import Player from './components/Player.jsx';
 import Challenge from './components/Challenge.jsx';
+
 function App() {
   return (
     <>
